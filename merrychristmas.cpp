@@ -8,12 +8,12 @@ using namespace std;
 
 int main(){
 
-    int animationTimer = 10;
+    int animationTimer = 6;
     while (animationTimer != 0){
         cout << "Merry Christmas!!!";
         this_thread::sleep_for(chrono::seconds(1));
         system("clear");
-        this_thread::sleep_for(chrono::seconds(1));
+        this_thread::sleep_for(chrono::milliseconds(250));
         cout << flush;
         animationTimer--;
     }
