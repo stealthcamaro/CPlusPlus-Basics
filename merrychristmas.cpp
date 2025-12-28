@@ -10,10 +10,10 @@ int main(){
 
     int animationTimer = 6;
     while (animationTimer != 0){
-        cout << "Merry Christmas!!!";
-        this_thread::sleep_for(chrono::seconds(1));
+        cout << "Feliz Navidad!!!";
+        this_thread::sleep_for(chrono::milliseconds(800));
         system("clear");
-        this_thread::sleep_for(chrono::milliseconds(250));
+        this_thread::sleep_for(chrono::milliseconds(200));
         cout << flush;
         animationTimer--;
     }
