@@ -11,6 +11,14 @@ class node{
     public: node * next = nullptr;
 };
 
+void insertNode(){
+
+}
+
+void deleteNode(){
+    
+}
+
 void printLinkedList(node * head){
     while(head != nullptr){
         cout << "This node = " << head->x << endl;
@@ -19,7 +27,6 @@ void printLinkedList(node * head){
 }
 
 int main(){
-
     node * spongebob = new node;
     spongebob->x = 67;
     node * patrick = new node;
