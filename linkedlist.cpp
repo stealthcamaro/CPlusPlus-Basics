@@ -11,12 +11,13 @@ class node{
     public: node * next = nullptr;
 };
 
-void insertNode(){
-
+void insertNode(node * head){
+    node * newNode = new node;
+    head->next = newNode;
 }
 
-void deleteNode(){
-    
+void deleteNode(node * head){
+    delete head;
 }
 
 void printLinkedList(node * head){
