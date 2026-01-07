@@ -18,7 +18,7 @@ node * createHead(int x){
     return newNode;
 }
 
-void insertNode(node * head, int x){
+void insertNode(node * &head, int x){
     node * newNode = new node;
     newNode->x = x;
     newNode->next = nullptr;
@@ -52,11 +52,13 @@ void deleteNode(node * &head){
 
 void printLinkedList(node * head){
     int nodeCounter = 1;
+    cout << "----- Linked List -----" << endl;
     while(head != nullptr){
         cout << "Node " << nodeCounter << " = " << head->x << endl;
         head = head->next;
         nodeCounter++;
     }
+    cout << endl;
 }
 
 void exitListApp(node * head){
@@ -82,6 +84,11 @@ int main(){
     while(menu != 3){
         cout << "----- Menu -----\n1.) Add Node\n2.) Delete Node\n3.) Exit\n";
         cin >> menu;
+        if (cin.fail() == true){
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "ERROR DETECTED: User entered invalid input." << endl;
+        }
         switch(menu) {
             case 1:
                 cout << "Assign a value to this Node: ";
@@ -102,8 +109,7 @@ int main(){
                 cout << "Invalid Number. Please select a number from the Menu..." << endl;
                 break;
         }
-        printLinkedList(head);
+        printLinkedList(head); // causing segfault because case 3 deletes the whole list which means I'm passing a 'head' with nothing
     }
-    delete(head); // manual garbage collection
     return 0;
 }
